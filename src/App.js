@@ -4,6 +4,7 @@ import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Articles } from "./pages/Articles";
 import styled from "styled-components";
+import { CounterButton } from "./pages/CounterButton";
 
 const BigRedHeading = styled.h1`
     color: red;
@@ -14,6 +15,7 @@ const App = () => {
     return (
         <>
             <BigRedHeading>Server-Side Rendering Example</BigRedHeading>
+            <CounterButton/>
             <ul>
                 <li>
                     <Link to="/">Home</Link>
