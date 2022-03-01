@@ -5,6 +5,7 @@ import { About } from "./pages/About";
 import { Articles } from "./pages/Articles";
 import styled from "styled-components";
 import { CounterButton } from "./pages/CounterButton";
+import { CounterProvider } from "./CounterProvider";
 
 const BigRedHeading = styled.h1`
     color: red;
@@ -13,9 +14,9 @@ const BigRedHeading = styled.h1`
 
 const App = () => {
     return (
-        <>
+        <CounterProvider>
             <BigRedHeading>Server-Side Rendering Example</BigRedHeading>
-            <CounterButton/>
+            <CounterButton />
             <ul>
                 <li>
                     <Link to="/">Home</Link>
@@ -38,7 +39,7 @@ const App = () => {
                     <Articles />
                 </Route>
             </Switch>
-        </>
+        </CounterProvider>
     );
 };
 
