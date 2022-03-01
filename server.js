@@ -5,7 +5,8 @@ import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
 import path from "path";
 import fs from "fs";
-import App from "./src/App";
+// import App from "./src/App";
+import App2 from "./src/App2";
 
 const app = express();
 
@@ -14,10 +15,17 @@ app.use(express.static("./build", { index: false }));
 app.get('/*', (req, res) => {
     const sheet = new ServerStyleSheet();
 
+    // const reactApp = renderToString(
+    //     sheet.collectStyles(
+    //         <StaticRouter location={req.url}>
+    //             <App/>
+    //         </StaticRouter>
+    //     )
+    // );
     const reactApp = renderToString(
         sheet.collectStyles(
             <StaticRouter location={req.url}>
-                <App/>
+                <App2/>
             </StaticRouter>
         )
     );

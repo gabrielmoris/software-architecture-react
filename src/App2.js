@@ -4,19 +4,18 @@ import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Articles } from "./pages/Articles";
 import styled from "styled-components";
-import { CounterButton } from "./pages/CounterButton";
-import { CounterProvider } from "./CounterProvider";
-
+import { RecoilRoot } from "recoil";
+import { CounterButton2 } from "./pages/CounterButton2";
 const BigRedHeading = styled.h1`
-    color: red;
+    color: blue;
     font-size: 50px;
 `;
 
-const App = () => {
+const App2 = () => {
     return (
-        <CounterProvider>
-            <BigRedHeading>App state managing with context</BigRedHeading>
-            <CounterButton />
+        <RecoilRoot>
+            <BigRedHeading>App2 with Recoil</BigRedHeading>
+            <CounterButton2 />
             <ul>
                 <li>
                     <Link to="/">Home</Link>
@@ -39,10 +38,8 @@ const App = () => {
                     <Articles />
                 </Route>
             </Switch>
-        </CounterProvider>
+        </RecoilRoot>
     );
 };
 
-export default App;
-
-// npx nodemon --exec npx babel-node server.js
+export default App2;
